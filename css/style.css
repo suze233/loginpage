@@ -1,0 +1,260 @@
+* {
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-image: url(../images/bg.jpg);
+    background-size: cover; */
+    background-color: #efeeee;
+    position: relative;
+    perspective: 1000px;
+
+}
+
+.box {
+    height: 480px;
+    width: 300px;
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #efeeee;
+    /* 盒子阴影 */
+    box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.1),
+    -9px -9px 18px rgba(255, 255, 255, 1);
+    /* 3d盒子 */
+    transform-style: preserve-3d;
+    /* 过渡动画 */
+    transition: box-shadow 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5);
+}
+
+.box.rotate-active {
+    /* 翻转时 */
+    box-shadow: -9px 9px 18px rgba(0, 0, 0, 0.1),
+    9px -9px 18px rgba(255, 255, 255, 1);
+    animation: rotate 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5) forwards;
+}
+
+.box.reverse-active {
+    /* 翻转恢复时 */
+    animation: rotate-reverse 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5) forwards;
+}
+
+.box .signin,
+.box .signup{
+    width: 220px;
+}
+
+.box .signin .form_title,
+.box .signup .form_title {
+    text-align: center;
+    color: #737373;
+    margin: 20px auto;
+    font-size: 21px;
+}
+
+.box-tx {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 1.5s;
+    position: relative;
+    left: 75px;
+}
+
+.box-tx:hover {
+    /* 设置头像旋转 */
+    transform: rotate(360deg);
+    /* 适应浏览器 */
+    /* -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg); */
+}
+
+.box .box-login {
+    margin-top: 10px;
+    /* 相对定位 */
+    position: relative;
+    width: 100%;
+}
+
+.box .box-login input {
+    /* 清除input框自带的边框和轮廓 */
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    font-size: 16px;
+    /* 背景颜色为透明色 */
+    background-color: transparent;
+
+}
+
+.box .box-login label {
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #adadad;
+    padding: 5px 0;
+    font-size: 18px;
+    pointer-events: none;
+    transition: all 0.5s;
+}
+
+.box .box-login input:focus~label,
+.box .box-login input:valid~label {
+    /* input获得焦点时，lable向上移 */
+    transform: translateY(-20px);
+    color: #596275;
+    font-size: 15px;
+}
+
+
+.box .box-login .underline {
+    position: absolute;
+    bottom: 30px;
+    background-color: #adadad;
+    margin: 0 auto;
+    height: 2px;
+    width: 100%;
+}
+
+/* 下面抄的，不知道为啥用:before*/
+.box .box-login .underline:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #596275;
+    transform: scaleX(0);
+    transition: all 0.5s;
+}
+
+.box .box-login input:focus~.underline:before,
+.box .box-login input:valid~.underline:before {
+    transform: scaleX(1);
+}
+
+.box .signin .forget {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.box .signin a {
+    color: #adadad;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.box .signin a:hover {
+    color: #737373;
+}
+
+.box .button{
+    margin: 20px 0px 20px 61px;
+    color: #596275;
+    font-size: 18px;
+    box-shadow: 9px 9px 18px rgba(0, 0, 0, 0.1),
+    -9px -9px 18px rgba(255, 255, 255, 1);
+    border-radius: 3rem;
+	transition: box-shadow .2s ease-out;
+    background-color: #efeeee;
+    width: 100px;
+    height: 45px;
+    /* 鼠标移动上去变成小手 */
+    cursor: pointer;
+    /* 取消原有button样式 */
+    outline: none;
+    border:none;
+}
+
+.button:hover{
+    /* 鼠标悬停时影音收缩色 */
+    /* box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2),
+    -1px -1px 2px rgba(255, 255, 255, 0.8);
+    border-radius: 3rem;
+    transition: box-shadow .2s ease-out;
+    transition: font-size .2s ease-out;
+}
+
+.box #button,
+.box .signup .form_title{
+    margin-top: 0px;
+}
+
+.box .signin,
+.box .signup {
+    position: absolute;
+    top: 30px;
+}
+
+.box .signin .nid,
+.box .signup .yid {
+    /* 取消原有button样式 */
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 30px;
+    position: relative;
+    right: -120px;
+    top: -7px;
+    /* 背景透明色 */
+    background-color: transparent;
+}
+
+
+.box .signin .nid span,
+.box .signup .yid span {
+    /* 鼠标移动上去变成小手 */
+    cursor: pointer;
+    font-size: 14px;
+    color: #adadad;
+}
+
+.box .signin .nid span:hover,
+.box .signup .yid span:hover {
+    color: #737373;
+}
+
+.box .signup {
+    transform: rotate3d(0, 1, 0, 180deg);
+}
+
+.box .signin {
+    transform: translateZ(1px)
+}
+
+/* 定义动画 */
+@keyframes rotate {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0);
+    }
+}
