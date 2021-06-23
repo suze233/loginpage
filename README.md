@@ -3,11 +3,11 @@
 
 ### 登录页
 
-<img src="../loginpage/images/signin.png" alt="登录页" style="zoom: 80%;" />
+<img src="images/signin.png" alt="登录页" style="zoom: 80%;" />
 
 ### 注册页
 
-<img src="../loginpage/images/signup.png" alt="注册页" style="zoom:80%;" />
+<img src="images/signup.png" alt="注册页" style="zoom:80%;" />
 
 
 
