@@ -231,11 +231,12 @@ body {
 }
 
 .box .signup {
+    translate: 0px 0px -1px;
     transform: rotate3d(0, 1, 0, 180deg);
 }
 
 .box .signin {
-    transform: translateZ(1px)
+    translate: 0px 0px 1px;
 }
 
 /* 定义动画 */
